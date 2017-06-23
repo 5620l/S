@@ -13,7 +13,7 @@ end
 if not lang then
    return '_♻️Group is already added♻️_'
 else
-return '♻️گروه از قبل ثبت شده بود♻️'
+return '`♻️گروه از قبل ثبت شده بود♻️`'
   end
 end
         -- create data array in moderation.json
@@ -59,7 +59,7 @@ end
     if not lang then
   return '*✔️Group has been added✔️*'
 else
-  return '✔️گروه با موفقیت ثبت شد✔️'
+  return '`✔️گروه با موفقیت ثبت شد✔️`'
 end
 end
 
@@ -71,7 +71,7 @@ local lang = redis:get(hash)
      if not lang then
         return '_You are not bot admin_'
    else
-        return 'شما مدیر ربات نیستید'
+        return '*شما مدیر ربات نیستید*'
     end
    end
     local data = load_data(_config.moderation.data)
