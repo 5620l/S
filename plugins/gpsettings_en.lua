@@ -604,7 +604,7 @@ if lock_link == "yes" then
 if not lang then
  return "🔐*Link* _Posting Is Already Locked_🔐"
 elseif lang then
- return "🔐قفل لینک فعال بود🔐"
+ return "*قفل لینک فعال بود.*"
 end
 else
 data[tostring(target)]["settings"]["lock_link"] = "yes"
@@ -612,7 +612,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔐*Link* _Posting Has Been Locked_🔐"
 else
- return "🔐قفل لینک فعال شد🔐"
+ return "_قفل لینک فعال شد.__"
 end
 end
 end
@@ -633,14 +633,14 @@ local lock_link = data[tostring(target)]["settings"]["lock_link"]
 if not lang then
 return "🔓*Link* _Posting Is Not Locked_🔓" 
 elseif lang then
-return "🔓قفل لینک غیرفعال بود🔓"
+return "_قفل لینک غیرفعال بود._"
 end
 else 
 data[tostring(target)]["settings"]["lock_link"] = "no" save_data(_config.moderation.data, data) 
 if not lang then
 return "🔓*Link* _Posting Has Been Unlocked_🔓" 
 else
-return "🔓قفل لینک غیرفعال شد🔓"
+return "_قفل لینک غیرفعال شد._"
 end
 end
 end
@@ -664,7 +664,7 @@ if lock_fosh == "yes" then
 if not lang then
  return "🔐*Fosh* _Posting Is Already Locked_🔐"
 elseif lang then
- return "🔐فعال فحش فعال بود🔐"
+ return "_فعال فحش فعال بود._"
 end
 else
 data[tostring(target)]["settings"]["lock_fosh"] = "yes"
@@ -672,7 +672,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔐*Fosh* _ Has Been Locked_🔐"
 else
- return "🔐فعال فحش فعال شد🔐"
+ return "_فعال فحش فعال شد._"
 end
 end
 end
@@ -693,14 +693,14 @@ local lock_fosh = data[tostring(target)]["settings"]["lock_fosh"]
 if not lang then
 return "🔓*Fosh* _Is Not Locked_🔓" 
 elseif lang then
-return "🔓فعال فحش غیرفعال بود🔓"
+return "_فعال فحش غیرفعال بود_"
 end
 else 
 data[tostring(target)]["settings"]["lock_fosh"] = "no" save_data(_config.moderation.data, data) 
 if not lang then
 return "🔓*Fosh* _Has Been Unlocked_🔓" 
 else
-return "🔓فعال فحش غیرفعال شد🔓"
+return "_فعال فحش غیرفعال شد_"
 end
 end
 end
@@ -722,7 +722,7 @@ if lock_tag == "yes" then
 if not lang then
  return "🔐*Tag* _Posting Is Already Locked_🔐"
 elseif lang then
- return "🔐قفل تگ فعال بود🔐"
+ return "_قفل تگ فعال بود._"
 end
 else
  data[tostring(target)]["settings"]["lock_tag"] = "yes"
@@ -730,7 +730,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔐*Tag* _Posting Has Been Locked_🔐"
 else
- return "🔐قفل تگ فعال شد🔐"
+ return "_قفل تگ فعال شد.__"
 end
 end
 end
@@ -1411,10 +1411,10 @@ local expiretime = redis:hget('expiretime', msg.chat_id_)
 	
 if not lang then
 local settings = data[tostring(target)]["settings"] 
- text = "⚙️*Group Settings*⚙️\n*__________________*\n● 》_Lock edit ➢_ *"..settings.lock_edit.."*\n● 》_Lock links ➢_ *"..settings.lock_link.."*\n● 》_Lock fosh ➢_ *"..settings.lock_fosh.."*\n● 》_Lock tags ➢_ *"..settings.lock_tag.."*\n● 》_Lock Persian* ➢_ *"..settings.lock_arabic.."*\n● 》_Lock flood ➢_ *"..settings.flood.."*\n● 》_Lock spam ➢_ *"..settings.lock_spam.."*\n● 》_Lock mention ➢_ *"..settings.lock_mention.."*\n● 》_Lock webpage ➢_ *"..settings.lock_webpage.."*\n● 》_welcome ➢_ *"..settings.welcome.."*\n● 》_Lock markdown ➢_ *"..settings.lock_markdown.."*\n● 》_Lock Bots ➢_ *"..settings.lock_bots.."*\n● 》_Lock gif ➢_ *"..settings.lock_gif.."*\n● 》_Lock text ➢_ *"..settings.lock_text.."*\n● 》_Lock inline ➢_ *"..settings.lock_inline.."*\n● 》_Lock game ➢_ *"..settings.lock_game.."*\n● 》_Lock photo ➢_ *"..settings.lock_photo.."*\n● 》_Lock video ➢_ *"..settings.lock_video.."*\n● 》_Lock audio ➢_ *"..settings.lock_audio.."*\n● 》_Lock voice ➢_ *"..settings.lock_voice.."*\n● 》_Lock sticker ➢_ *"..settings.lock_sticker.."*\n● 》_Lock contact ➢_ *"..settings.lock_contact.."*\n● 》_Lock forward ➢_ *"..settings.lock_forward.."*\n● 》_Lock location ➢_ *"..settings.lock_location.."*\n● 》_Lock document ➢_ *"..settings.lock_document.."*\n● 》_Lock TgService ➢_ *"..settings.lock_tgservice.."*\n● 》_Lock all : _ *"..settings.lock_all.."*\n*__________________*\n● 》_Flood sensitivity ➢_ *"..NUM_MSG_MAX.."*\n● 》_Expire time ➢_ *"..expire.."*\n*__________________*\n Enable✓ ➰ Disable✘  \n*__________________*\n*Language* : *EN*"
+ text = "⚙️*Group Settings*⚙️\n*__________________*\n▫️ 》_Lock edit ➢_ *"..settings.lock_edit.."*\n▫️ 》_Lock links ➢_ *"..settings.lock_link.."*\n▫️ 》_Lock fosh ➢_ *"..settings.lock_fosh.."*\n▫️ 》_Lock tags ➢_ *"..settings.lock_tag.."*\n▫️ 》_Lock Persian* ➢_ *"..settings.lock_arabic.."*\n▫️ 》_Lock flood ➢_ *"..settings.flood.."*\n▫️ 》_Lock spam ➢_ *"..settings.lock_spam.."*\n▫️ 》_Lock mention ➢_ *"..settings.lock_mention.."*\n▫️ 》_Lock webpage ➢_ *"..settings.lock_webpage.."*\n▫️ 》_welcome ➢_ *"..settings.welcome.."*\n▫️ 》_Lock markdown ➢_ *"..settings.lock_markdown.."*\n▫️ 》_Lock Bots ➢_ *"..settings.lock_bots.."*\n▫️ 》_Lock gif ➢_ *"..settings.lock_gif.."*\n▫️ 》_Lock text ➢_ *"..settings.lock_text.."*\n▫️ 》_Lock inline ➢_ *"..settings.lock_inline.."*\n● 》_Lock game ➢_ *"..settings.lock_game.."*\n▫️▫️ 》_Lock photo ➢_ *"..settings.lock_photo.."*\n▫️ 》_Lock video ➢_ *"..settings.lock_video.."*\n▫️ 》_Lock audio ➢_ *"..settings.lock_audio.."*\n▫️▫️ 》_Lock voice ➢_ *"..settings.lock_voice.."*\n▫️ 》_Lock sticker ➢_ *"..settings.lock_sticker.."*\n▫️ 》_Lock contact ➢_ *"..settings.lock_contact.."*\n▫️ 》_Lock forward ➢_ *"..settings.lock_forward.."*\n▫️ 》_Lock location ➢_ *"..settings.lock_location.."*\n● 》_Lock document ➢_ *"..settings.lock_document.."*\n ▫️》_Lock TgService ➢_ *"..settings.lock_tgservice.."*\n▫️ 》_Lock all : _ *"..settings.lock_all.."*\n*__________________*\n▫️ 》_Flood sensitivity ➢_ *"..NUM_MSG_MAX.."*\n▫️ 》_Expire time ➢_ *"..expire.."*\n*__________________*\n Enable✓ ➰ Disable✘  \n*__________________*\n@monsterTGteam"
 else
 local settings = data[tostring(target)]["settings"] 
- text = "⚙️*Group Settings*⚙️\n*__________________*\n● 》_Lock edit ➢_ *"..settings.lock_edit.."*\n● 》_Lock links ➢_ *"..settings.lock_link.."*\n● 》_Lock fosh ➢_ *"..settings.lock_fosh.."*\n● 》_Lock tags ➢_ *"..settings.lock_tag.."*\n● 》_Lock Persian* ➢_ *"..settings.lock_arabic.."*\n● 》_Lock flood ➢_ *"..settings.flood.."*\n● 》_Lock spam ➢_ *"..settings.lock_spam.."*\n● 》_Lock mention ➢_ *"..settings.lock_mention.."*\n● 》_Lock webpage ➢_ *"..settings.lock_webpage.."*\n● 》_welcome ➢_ *"..settings.welcome.."*\n● 》_Lock markdown ➢_ *"..settings.lock_markdown.."*\n● 》_Lock Bots ➢_ *"..settings.lock_bots.."*\n● 》_Lock gif ➢_ *"..settings.lock_gif.."*\n● 》_Lock text ➢_ *"..settings.lock_text.."*\n● 》_Lock inline ➢_ *"..settings.lock_inline.."*\n● 》_Lock game ➢_ *"..settings.lock_game.."*\n● 》_Lock photo ➢_ *"..settings.lock_photo.."*\n● 》_Lock video ➢_ *"..settings.lock_video.."*\n● 》_Lock audio ➢_ *"..settings.lock_audio.."*\n● 》_Lock voice ➢_ *"..settings.lock_voice.."*\n● 》_Lock sticker ➢_ *"..settings.lock_sticker.."*\n● 》_Lock contact ➢_ *"..settings.lock_contact.."*\n● 》_Lock forward ➢_ *"..settings.lock_forward.."*\n● 》_Lock location ➢_ *"..settings.lock_location.."*\n● 》_Lock document ➢_ *"..settings.lock_document.."*\n● 》_Lock TgService ➢_ *"..settings.lock_tgservice.."*\n● 》_Lock all : _ *"..settings.lock_all.."*\n*__________________*\n● 》_Flood sensitivity ➢_ *"..NUM_MSG_MAX.."*\n● 》_welcome msg ➢_ *"..settings.welcome.."*\n● 》_Expire time ➢_ *"..expire.."* \n*__________________*\n Enable✓ ➰ Disable✘ \n*__________________*\n*Language* : *EN*"
+ text = "⚙️*Group Settings*⚙️\n*__________________*\n▫️ 》_Lock edit ➢_ *"..settings.lock_edit.."*\n▫️ 》_Lock links ➢_ *"..settings.lock_link.."*\n▫️ 》_Lock fosh ➢_ *"..settings.lock_fosh.."*\n▫️ 》_Lock tags ➢_ *"..settings.lock_tag.."*\n▫️ 》_Lock Persian* ➢_ *"..settings.lock_arabic.."*\n▫️▫️ 》_Lock flood ➢_ *"..settings.flood.."*\n▫️ 》_Lock spam ➢_ *"..settings.lock_spam.."*\n▫️ 》_Lock mention ➢_ *"..settings.lock_mention.."*\n▫️ 》_Lock webpage ➢_ *"..settings.lock_webpage.."*\n▫️ 》_welcome ➢_ *"..settings.welcome.."*\n▫️ 》_Lock markdown ➢_ *"..settings.lock_markdown.."*\n▫️ 》_Lock Bots ➢_ *"..settings.lock_bots.."*\n▫️ 》_Lock gif ➢_ *"..settings.lock_gif.."*\n▫️ 》_Lock text ➢_ *"..settings.lock_text.."*\n▫️ 》_Lock inline ➢_ *"..settings.lock_inline.."*\n● 》_Lock game ➢_ *"..settings.lock_game.."*\n 》_Lock photo ➢_ *"..settings.lock_photo.."*\n▫️ 》_Lock video ➢_ *"..settings.lock_video.."*\n▫️ 》_Lock audio ➢_ *"..settings.lock_audio.."*\n 》_Lock voice ➢_ *"..settings.lock_voice.."*\n▫️ 》_Lock sticker ➢_ *"..settings.lock_sticker.."*\n▫️ 》_Lock contact ➢_ *"..settings.lock_contact.."*\n▫️ 》_Lock forward ➢_ *"..settings.lock_forward.."*\n▫️ 》_Lock location ➢_ *"..settings.lock_location.."*\n● 》_Lock document ➢_ *"..settings.lock_document.."*\n▫️ 》_Lock TgService ➢_ *"..settings.lock_tgservice.."*\n▫️ 》_Lock all : _ *"..settings.lock_all.."*\n*__________________*\n▫️ 》_Flood sensitivity ➢_ *"..NUM_MSG_MAX.."*\n▫️ 》_welcome msg ➢_ *"..settings.welcome.."*\n▫️ 》_Expire time ➢_ *"..expire.."* \n*__________________*\n Enable✓ ➰ Disable✘ \n*__________________*\n@monsterTGteam"
 end
 if not lang then
 text = string.gsub(text, "yes", "✓")
@@ -1480,7 +1480,7 @@ data[tostring(target)]["settings"]["lock_all"] = "no"
 if not lang then
 return "🔓*lock All* _Has Been Disabled_🔓" 
 else
-return "🔓قفل همه غیرفعال شد🔓"
+return "_قفل همه غیرفعال شد._"
 end 
 end
 end
@@ -1502,7 +1502,7 @@ if lock_gif == "yes" then
 if not lang then
  return "🔐*lock Gif* _Is Already Enabled_🔐"
 elseif lang then
- return "🔐قفل تصاویر متحرک فعال بود🔐"
+ return "_قفل تصاویر متحرک فعال بود._"
 end
 else
  data[tostring(target)]["settings"]["lock_gif"] = "yes" 
@@ -1510,7 +1510,7 @@ save_data(_config.moderation.data, data)
 if not lang then 
  return "🔓*lock Gif* _Has Been Enabled_🔓"
 else
- return "🔓قفل تصاویر متحرک فعال شد🔓"
+ return "_قفل تصاویر متحرک فعال شد._"
 end
 end
 end
@@ -1531,7 +1531,7 @@ local lock_gif = data[tostring(target)]["settings"]["lock_gif"]
 if not lang then
 return "🔐*lock Gif* _Is Already Disabled_🔐" 
 elseif lang then
-return "🔐قفل تصاویر متحرک غیرفعال بود🔐"
+return "_قفل تصاویر متحرک غیرفعال بود._"
 end
 else 
 data[tostring(target)]["settings"]["lock_gif"] = "no"
@@ -1539,7 +1539,7 @@ data[tostring(target)]["settings"]["lock_gif"] = "no"
 if not lang then
 return "🔐*lock Gif* _Has Been Disabled_🔐" 
 else
-return "🔐قفل تصاویر متحرک غیرفعال شد🔐"
+return "_قفل تصاویر متحرک غیرفعال شد._"
 end
 end
 end
@@ -1560,7 +1560,7 @@ if lock_game == "yes" then
 if not lang then
  return "🔐*lock Game* _Is Already Enabled_🔐"
 elseif lang then
- return "🔐قفل غیرفعالی های تحت وب فعال بود🔐"
+ return "_قفل غیرفعالی های تحت وب فعال بود._"
 end
 else
  data[tostring(target)]["settings"]["lock_game"] = "yes" 
@@ -1568,7 +1568,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔐*lock Game* _Has Been Enabled_🔐"
 else
- return "🔐قفل غیرفعالی های تحت وب فعال شد🔐"
+ return "_قفل غیرفعالی های تحت وب فعال شد._"
 end
 end
 end
@@ -1589,7 +1589,7 @@ local lock_game = data[tostring(target)]["settings"]["lock_game"]
 if not lang then
 return "🔓*lock Game* _Is Already Disabled_🔓" 
 elseif lang then
-return "🔓قفل غیرفعالی های تحت وب غیرفعال بود🔓"
+return "_قفل غیرفعالی های تحت وب غیرفعال بود._"
 end
 else 
 data[tostring(target)]["settings"]["lock_game"] = "no"
@@ -1597,7 +1597,7 @@ data[tostring(target)]["settings"]["lock_game"] = "no"
 if not lang then 
 return "🔓*lock Game* _Has Been Disabled_🔓" 
 else
-return "🔓قفل غیرفعالی های تحت وب غیرفعال شد🔓"
+return "_قفل غیرفعالی های تحت وب غیرفعال شد._"
 end
 end
 end
@@ -1618,7 +1618,7 @@ if lock_inline == "yes" then
 if not lang then
  return "🔐*lock Inline* _Is Already Enabled_🔐"
 elseif lang then
- return "🔐قفل کیبورد شیشه ای فعال بود🔐"
+ return "_قفل کیبورد شیشه ای فعال بود._"
 end
 else
  data[tostring(target)]["settings"]["lock_inline"] = "yes" 
@@ -1626,7 +1626,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔐*lock Inline* _Has Been Enabled_🔐"
 else
- return "🔐قفل کیبورد شیشه ای فعال شد🔐"
+ return "_قفل کیبورد شیشه ای فعال شد._"
 end
 end
 end
@@ -1647,7 +1647,7 @@ local lock_inline = data[tostring(target)]["settings"]["lock_inline"]
 if not lang then
 return "🔓*lock Inline* _Is Already Disabled_🔓" 
 elseif lang then
-return "🔓قفل کیبورد شیشه ای غیرفعال بود🔓"
+return "_قفل کیبورد شیشه ای غیرفعال بود._"
 end
 else 
 data[tostring(target)]["settings"]["lock_inline"] = "no"
@@ -1655,7 +1655,7 @@ data[tostring(target)]["settings"]["lock_inline"] = "no"
 if not lang then
 return "🔓*lock Inline* _Has Been Disabled_🔓" 
 else
-return "🔓قفل کیبورد شیشه ای غیرفعال شد🔓"
+return "_قفل کیبورد شیشه ای غیرفعال شد._"
 end
 end
 end
@@ -1676,7 +1676,7 @@ if lock_text == "yes" then
 if not lang then
  return "🔐*lock Text* _Is Already Enabled_🔐"
 elseif lang then
- return "🔐قفل متن فعال بود🔐"
+ return "_قفل متن فعال بود._"
 end
 else
  data[tostring(target)]["settings"]["lock_text"] = "yes" 
@@ -1684,7 +1684,7 @@ save_data(_config.moderation.data, data)
 if not lang then
  return "🔐*lock Text* _Has Been Enabled_🔐"
 else
- return "🔐قفل متن فعال شد🔐"
+ return "_قفل متن فعال شد._"
 end
 end
 end
@@ -1705,7 +1705,7 @@ local lock_text = data[tostring(target)]["settings"]["lock_text"]
 if not lang then
 return "🔓*lock Text* _Is Already Disabled_🔓"
 elseif lang then
-return "🔓قفل متن غیرفعال بود🔓" 
+return "_قفل متن غیرفعال بود._" 
 end
 else 
 data[tostring(target)]["settings"]["lock_text"] = "no"
@@ -1713,7 +1713,7 @@ data[tostring(target)]["settings"]["lock_text"] = "no"
 if not lang then
 return "🔓*lock Text* _Has Been Disabled_🔓" 
 else
-return "🔓قفل متن غیرفعال شد🔓"
+return "_قفل متن غیرفعال شد._"
 end
 end
 end
@@ -1734,7 +1734,7 @@ if lock_photo == "yes" then
 if not lang then
  return "🔐*lock Photo* _Is Already Enabled_🔐"
 elseif lang then
- return "🔐قفل عکس فعال بود🔐"
+ return "_قفل عکس فعال بود._"
 end
 else
  data[tostring(target)]["settings"]["lock_photo"] = "yes" 
